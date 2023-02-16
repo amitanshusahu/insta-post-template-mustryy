@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+:root{
+  --max-space : 30px;
+  --min-space : 15px;
+  font-family: 'Sora', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+h1, h2, h3, h4, h5{
+  text-transform: capitalize;
+}
+
+input, textarea{
+padding: 10px;
+border-radius: 10px;
+border: 1px solid #dddd;
+}
+
+button:hover{
+  cursor: pointer;
+}

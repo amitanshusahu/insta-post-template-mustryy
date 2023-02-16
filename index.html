@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./prism/prism.css">
+    <script src="./prism/prism.js" id="prism-script"></script>
+    <script src="./abstract.js" async defer></script>
+    <script src="./script.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+
+      <div class="flex-col-max exportCanvas">
+       <button class="btn" onclick="closeCanvas()">close</button>
+       <div class="canvas flex-max"> </div>
+      </div>
+
+    <aside>
+
+      <nav>
+          <h3>${type} page</h3>
+          <span class="page-no">${page}</span>
+        </nav>
+        <menu class="flex-col-max">
+          <div class="config flex-col-min">
+            <h4>title</h4>  
+            <input type="text" id="title1" placeholder="Useful JavaScript <b>Snippets</b> to" onkeyup="setTitle1(this)">
+            <input type="text" id="title2" placeholder="Save time" onkeyup="setTitle2(this)">
+          </div>
+          <div class="config flex-col-min">
+            <h4>image</h4>
+            <input type="file" accept="image/*" id="" oninput="setPostImage(event)">
+            <div class="options">
+              <ul class="option-item-wrapper flex-col-min">
+                <li>
+                  <button onclick="image.flipVertical()">flip-vertical</button>
+                  <button onclick="image.flipHorizontal()">flip-horizontal</button>
+                </li>
+                <li>
+                  <h5>Hue</h5>
+                  <input type="range" range="360" onchange="image.setHue()">
+                </li>
+              </ul>
+              </div>
+          </div>
+        </menu>
+
+      </menu>
+
+    </aside> 
+
+    <main>
+
+      <nav>
+        <h3>Name of the post </h3>
+        <div class="options">
+          <button class="btn btn-primary" onclick="exportPost()">Export</button>
+        </div>
+      </nav>
+
+      <div class="container flex-col-max" id="post-holder-scroll">
+
+        <div class="post-container flex-col-max">
+        </div>
+
+
+        <div class="create-post-wrapper flex-col-max">
+            <div class="icon-wrapper">
+              <b> + </b> 
+            </div>
+            <div class="post-types flex-min">
+              <button class="btn" onclick="addFrame('title')" >title</button>
+              <button class="btn" onclick="addFrame('para')" >paragraph</button>
+              <button class="btn" onclick="addFrame('code')" >code</button>
+            </div>
+      </div>
+        
+      </div>
+    </main>
+
+  </body>
+</html>

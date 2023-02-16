@@ -1,0 +1,226 @@
+@import url(./common.css);
+@import url(./utils.css);
+
+body{
+  width: 100vw; height: 100vh;
+  display: grid;
+/*  grid-template-columns: 1fr 3fr;*/
+  overflow: hidden;
+}
+.exportCanvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: white;
+  scale : 0;
+  overflow-y: scroll;
+  padding: 30px;
+}
+.exportCanvas .canvas{
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+/* -- side bar styles -- */
+aside{
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background-color: rgb(25, 25, 25);
+  color-scheme: dark;
+  color: white;
+  display: none;
+}
+aside nav, main nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--max-space);
+  background-color: rgb(30,30,30);
+  box-shadow: 0px 0px 20px rgba(1, 1, 1, 0.2);
+}
+aside nav h3{
+  color: rgb(100, 100, 100);
+}
+aside menu {
+  padding: var(--max-space);
+}
+aside .page-no{
+  padding: 10px;
+  background-color: rgba(1, 1, 1, 0.5);
+  border-radius: 10px;
+}
+aside menu .config .options{
+  background-color: rgb(50,50,50);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+/* -- main content styles -- */
+main{
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background-color: white;
+}
+main nav{
+  background-color: white;
+}
+main .container{
+  height: calc(100% - 60px);
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  align-items: center;
+  padding: var(--max-space);
+  padding-top: 5%;
+  padding-bottom: 10%;
+  background-color: lightgray;
+}
+.container .post-container{
+  height: fit-content;
+  width: fit-content;
+  padding: var(--min-space);
+}
+.container h3{
+  font-size: 20px;
+}
+.container p{
+  font-size: 14px;
+  color: lightgray;
+}
+.code{
+  margin-top: 10px;
+  background-color: rgba(15, 15, 15, 0.7) ;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: fit-content;
+  font-size: 8px;
+  border: 1px solid rgba(50, 50, 50);
+  margin-bottom: 10px;
+}
+code{
+  font-size: 10px ;
+  line-height: 14px ;
+  font-family: 'Fira Code', monospace;
+  tab-size: 2;	
+}
+.frame-wrapper{
+padding: 1px;
+cursor: pointer;
+height: fit-content;
+width: fit-content;
+background-color: white;
+}
+.frame-wrapper:hover, .frame-wrapper:active{
+  outline: 3px solid red;
+}
+.frame{
+  --space : 30px;
+  --size : 450px;
+  padding: var(--space);
+  width: var(--size); height: var(--size);
+  background: gray;
+  background-image: url(./img/bg.jpg);
+  display: flex;
+  gap: var(--space);
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #07071a;
+  background-size: contain;
+  background-image: url(./public/bg.png);
+  color: white;
+  aspect-ratio: 1/1;
+  scroll-snap-align: center;
+}
+.frame #logo{
+  height: 45px;
+}
+#logo img{
+  height: inherit;
+}
+.frame .content h1 b,
+.content .remain h1 b{
+  padding-left: 4.5px;
+  padding-right: 4.5px;
+  background-color: blue;
+  border-radius: 5px;
+}
+.frame .content{
+  max-height: 355px;
+  overflow: hidden;
+}
+.frame .content h1{
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.frame .content .flex-col-min{
+  justify-content: center;
+  align-items: center;
+}
+.frame .content img{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  max-height: 150px;
+}
+.content .remain{
+  display: flex;
+  justify-content: space-between;
+}
+.content .remain h1{
+  word-break: break-word;
+}
+.content .remain .image-holder{
+  height: 195px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .remain .image-holder img{
+  height: inherit;
+  filter: hue-rotate(90deg);
+}
+.flip-h{
+  transform: rotateY(180deg);
+}
+.flip-v{
+  transform: rotateX(180deg);
+}
+.frame .footer{
+  display: flex;
+  justify-content: space-between;
+}
+.footer img{
+  height: 15px;
+}
+
+.container .create-post-wrapper{
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  border: 2px dashed rgba(1, 1, 1, 0.2);
+  padding: 30px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-post-wrapper .icon-wrapper{
+box-shadow: 0 5px 10px rgba(1, 1, 1, 0.2);
+padding: 20px;
+width: 30px; height: 30px;
+border-radius: 50%;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: -50px;
+background-color: white;
+  border: 1px solid rgba(1, 1, 1, 0.2);
+}
